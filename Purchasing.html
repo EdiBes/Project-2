@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order a personal call</title>
+    <link rel="stylesheet" href="css/styling.css">
+    <script src="JavaScript/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+
+  </head>
+  
+  <div id="boxOfLines">
+    <div class="line1">
+    </div>
+    <div class="line2">
+    </div>
+    <div class="line3">
+    </div>
+    <div class="line4">
+    </div>
+    <div class="line5">
+    </div>
+  </div>
+
+  <body>
+    <div class="container1">
+    <br><br><br><br>
+    
+
+    <div class="content">
+        <div class="contentText">
+          <h1>Your personal Call</h1>
+          <h2>Fill out the form and pay your purchase directly with Ethereum</h2>
+        </div>
+                </div>
+    <br>
+    <div class="content">
+         <div class="contentText">
+             <br><br><br>
+
+            <form action="purchasing.php" class="form">
+                <label for "purchasing">I want to call with</label>
+                <select name="purchasing">
+                <option>Edi</option>
+                <option>Dario</option>
+                <option>Raphael</option>
+                <option>Niclas</option>
+                <option>Dominik</option>
+                <option>Daniel</option>
+                <br>
+                </select>
+            </form> 
+            <br>
+            <form></form>
+                <input type="radio" class= "time1"id="time1" name="time">
+                    <label for="time1"> 30 Minutes</label><br>
+                    <input type="radio" class= "time2" id="time2" name="time">
+                    <label for="time2"> 60 Minutes</label><br>
+                    <input type="radio" class= "time3" id="time3" name="time">
+                    <label for="time3"> The whole evening</label>
+            </form> 
+            <br><br>
+            <script>
+            document.write("Price: " +0.015 + " Ethereum")
+            </script>
+            
+            
+            <br><br> 
+            <button class="purchase">Purchase</button>
+            <script>let ethValue = 0.015;</script>
+            <script>
+              
+              $(()=>{
+                if (typeof web3 !=='undefined') {
+                  
+                  $('.purchase').click(()=>{
+
+                    
+                      web3.eth.sendTransaction({
+                      to: '0x7659EdC3E64EAf8f9E34D84A618FEe15C577b810',
+                      value: web3.toWei(ethValue, 'ether')
+                  }, (err) => {
+              
+                     })
+                  })
+                }
+              })
+            </script>
+            
+         </div>
+    </div>
+  <br>
+
+  </div>
+  </body>
+</html>
